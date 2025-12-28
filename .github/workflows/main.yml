@@ -1,0 +1,18 @@
+name: Docker Build and Deploy Pipeline
+
+on:
+  push:
+    branches: [ "main" ] # Se activa cada vez que subís código a main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest # GitHub te presta una máquina virtual Linux para correr esto
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@v3
+
+      - name: Construir la imagen de Docker
+        run: docker build -t app.py .
+
+      - name: Probar el contenedor
+        run: docker run app.py
