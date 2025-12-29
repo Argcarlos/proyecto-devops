@@ -1,20 +1,39 @@
 # Python Dockerized Microservice
 
-## Project Overview
-This is a lightweight Python application encapsulated in a Docker container. It demonstrates basic skills in **Infrastructure as Code (IaC)** and **Containerization**, as required for DevOps and Infrastructure Engineer roles.
+## Overview
+A lightweight Python application packaged in a Docker container. This README explains how to build and run the image locally and summarizes the technologies used.
 
-## Technologies Used
-* **Python**: Core application logic.
-* **Docker**: Containerization and environment isolation.
-* **Git**: Version control and source code management.
+## Technologies
+- Python — application logic
+- Docker — containerization and environment isolation
+- Git — source control
 
-## How to Run
+## Requirements
+- Docker installed on the host machine
+
+## Run locally
 1. Build the image:
-   `docker build -t mi-app-python .`
-2. Run the container:
-   `docker run mi-app-python`
 
-## Professional Skills Demonstrated
-* Proficiency in CLI and terminal environments.
-* Understanding of modern deployment pipelines.
-* Problem-solving and troubleshooting during environment setup.
+```bash
+docker build -t my-python-app .
+```
+
+2. Run the container (example with port mapping):
+
+```bash
+docker run --rm -p 8000:8000 my-python-app
+```
+
+If the app does not expose ports, run it with:
+
+```bash
+docker run --rm my-python-app
+```
+
+## Skills demonstrated
+- Command-line usage and terminal workflows
+- Basic containerization and local deployment
+- Introductory Infrastructure as Code (IaC) practices and troubleshooting
+
+## Notes
+This README is intentionally minimal. For CI/CD, production deployment, or orchestration, add pipelines, automated tests, and appropriate security measures.
