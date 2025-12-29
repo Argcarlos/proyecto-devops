@@ -1,0 +1,10 @@
+- name: Verificación de salud del sistema
+  hosts: localhost
+  tasks:
+    - name: Comprobar memoria disponible
+      shell: free -m
+      register: memoria
+
+    - name: Mostrar memoria
+      debug:
+        msg: "La memoria actual es: {{ memoria.stdout }}"
